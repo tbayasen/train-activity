@@ -10,7 +10,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: skyblue;
     line-height: 1.5em;
-    text-align: center;
     margin: 0 auto;
     min-height: 721px;
     overflow: auto;
@@ -26,6 +25,8 @@ header {
     font-size: 30px;
     width: 100%;
     height: 10%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .container {
@@ -40,6 +41,7 @@ header {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Schedule Display CSS */
 .train-schedule {
     display: block;
     border: 5px solid black;
@@ -54,17 +56,51 @@ header {
     height: 30px;
     margin:auto;
     border-bottom: 1px solid black;
+    padding-left: 8px;
 }
 
 .schedule-display {
     background-color: white;
 }
 
+.schedule-table {
+    width: 100%;
+}
+
+.schedule-display tr th {
+
+}
+
+
+/* Input CSS */
 .train-input {
     display: block;
     border: 5px solid black;
-    height: 250px;
+    height: 275px;
     margin-top: 10px;
     border-radius: 5px;
     background-color: white;
+}
+
+.input-form {
+    width: 95%;
+    margin: auto;
+    border: 2px solid lightgrey;
+    line-height: 1.5em;
+}
+
+form {
+    padding-left: 8px;
+}
+
+button {
+    width: 65px;
+    margin-top: 5px;
+    line-height: 2em;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: skyblue;
+    cursor: pointer;
 }

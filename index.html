@@ -16,13 +16,39 @@
         <div class="train-schedule">
             <div class="train-header"><h3>Current Train Schedule</h3></div>
             <div class="schedule display">
-                
+                <table class="schedule-table">
+                    <tr>
+                        <th>Train Name</th>
+                        <th colspan="2">Destination</th>
+                        <th colspan="3">Frequency (min)</th>
+                        <th colspan="4">Next Arrival</th>
+                        <th colspan="5">Minutes Away</th>
+                    </tr>
+                </table>
             </div>
         </div>
         
         <div class="train-input">
             <div class="train-header"><h3>Input Train</h3></div>
-
+            <form role="form">
+                <div class="train-name">
+                    <label for="name-input">Train Name:</label>
+                    <input class="input-form" id="train-name" type="text">
+                </div>
+                <div class="destination">
+                    <label id="train-destination" for="destination-input">Train Destination: </label>
+                    <input class="input-form" id="destination" type="text">
+                </div>
+                <div class="first-train-time">
+                    <label id="first-train-time" for="first-train-input">First Train Time</label>
+                    <input class="input-form" id="first-train-input" type="text">
+                </div>
+                <div class="train-frequency">
+                    <label id="train-frequency" for="train-frequency-input">Frequency:</label>
+                    <input class="input-form" id="frequency-input" type="text">
+                </div>
+                <button>Submit</button>
+            </form>
         </div>
 
     </div>
