@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Train Schedule</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
 <body>
@@ -19,10 +20,10 @@
                 <table class="schedule-table">
                     <tr id="table-row">
                         <th class="table-cell">Train Name</th>
-                        <th class="table-cell" colspan="2">Destination</th>
-                        <th class="table-cell" colspan="3">Frequency (min)</th>
-                        <th class="table-cell" colspan="4">Next Arrival</th>
-                        <th class="table-cell" colspan="5">Minutes Away</th>
+                        <th class="table-cell">Destination</th>
+                        <th class="table-cell">Frequency (min)</th>
+                        <th class="table-cell">Next Arrival</th>
+                        <th class="table-cell">Minutes Away</th>
                     </tr>
                 </table>
             </div>
@@ -31,7 +32,7 @@
         <div class="train-input">
             <div class="train-header"><h3>Input Train</h3></div>
             <form role="form">
-                <div class="train-name">
+                <div class="trainName">
                     <label for="name-input">Train Name:</label>
                     <input class="input-form" id="train-name" type="text">
                 </div>
@@ -40,17 +41,18 @@
                     <input class="input-form" id="destination" type="text">
                 </div>
                 <div class="first-train-time">
-                    <label id="first-train-time" for="first-train-input">First Train Time</label>
+                    <label id="first-train-time" for="first-train-input">First Train Time(in 24-hour time)</label>
                     <input class="input-form" id="first-train-input" type="text">
                 </div>
                 <div class="train-frequency">
                     <label id="train-frequency" for="train-frequency-input">Frequency:</label>
                     <input class="input-form" id="frequency-input" type="text">
                 </div>
-                <button>Submit</button>
+                <button id="add-train">Submit</button>
             </form>
         </div>
 
     </div>
+    <script src="assets/javascript/app.js"></script>
 </body>
 </html>

@@ -63,15 +63,24 @@ header {
     background-color: white;
 }
 
-.schedule-table {
+table {
     width: 100%;
     border-spacing: 0;
+    table-layout: fixed;
 }
 
-.table-cell {
+td, th {
+    display: table-cell;
     border-bottom: 1px solid black;
     border-collapse: collapse;
+    text-align: left;
+    padding-left: 8px;
     width: 20%;
+    margin: auto;
+}
+
+tr {
+    width: 100%;
 }
 
 
