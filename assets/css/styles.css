@@ -1,0 +1,70 @@
+/* General */
+* {
+    margin:0;
+    border:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: skyblue;
+    line-height: 1.5em;
+    text-align: center;
+    margin: 0 auto;
+    min-height: 721px;
+    overflow: auto;
+    display: block;
+}
+
+header {
+    display: block;
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
+    height: 10%;
+}
+
+.container {
+    display: block;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 960px;
+}
+
+.banner {
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.train-schedule {
+    display: block;
+    border: 5px solid black;
+    height: 350px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.train-header {
+    background-color: lightgrey;
+    height: 30px;
+    margin:auto;
+    border-bottom: 1px solid black;
+}
+
+.schedule-display {
+    background-color: white;
+}
+
+.train-input {
+    display: block;
+    border: 5px solid black;
+    height: 250px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
