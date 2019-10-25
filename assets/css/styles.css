@@ -59,6 +59,11 @@ header {
     padding-left: 8px;
 }
 
+.train-header h3 {
+    float: left;
+    position: relative;
+}
+
 .schedule-display {
     background-color: white;
 }
@@ -77,6 +82,11 @@ td, th {
     padding-left: 8px;
     width: 20%;
     margin: auto;
+}
+
+#displayTime {
+    float: right;
+    padding-right: 8px;
 }
 
 tr {
