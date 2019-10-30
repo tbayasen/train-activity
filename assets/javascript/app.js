@@ -90,9 +90,7 @@ $(document).ready(function() {
             nextTrain = moment().add(minutesAway, "minutes");
             nextTrain = moment(nextTrain).format("HH:mm");
         };
-        calcNextTrain();
-
-        
+        calcNextTrain(); 
 
         //append and display new row to table
         var trainTable = $(".schedule-table");
@@ -102,6 +100,18 @@ $(document).ready(function() {
         <td>` + trainFrequency + `</td>
         <td>` + nextTrain + `</td>
         <td>` + minutesAway + `</td></tr>`);
+        
+        $("td:nth-child(5)").each(function(i) {
+            $("td:nth-child(5)").attr("id", "minutesAway" + (i + 1));
+        });
+        
+        //update mins away html every minute
+        function updateMinAway() {
+            $("#train")
+            timer = setTimeout(updateMinAway, 3000)
+            console.log(minutesAway);
+        }
+        updateMinAway();
 
         //clear text boxes after submit
         $("#train-name").val("");
