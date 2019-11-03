@@ -1,4 +1,4 @@
-###Overview
+### Overview
 * This app is able to:
   
   * Users are able to store the following data:
@@ -14,13 +14,13 @@
 
 This website is designed to pull the aforemention user inputs and store them in firebase. Upon pulling said data, the next train time and how long until it arrives is calculated and displayed to the user. 
 
-#Link
+# Link
 https://tyronebayasen99.github.io/train-activity/
 
-#Built With
-*HTML5
-*CSS3
-*JavaScript
-*jQuery
-*Firebase Database
-*Moment.js
+# Built With
+* HTML5
+* CSS3
+* JavaScript
+* jQuery
+* Firebase Database
+* Moment.js
