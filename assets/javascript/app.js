@@ -47,35 +47,61 @@ $(document).ready(function() {
             trainName: trainName,
             trainDestination: trainDestination,
             firstTrain: firstTrain,
-            trainFrequency: trainFrequency,
-            dateAdded: firebase.database.ServerValue.TIMESTAMP
+            trainFrequency: trainFrequency
         });
 
         //form validation
-        if (trainName === '') {
-            alert("Train name input is not valid.");
-            $("#train-name").css("background-color", "pink");
-        }
+        if (trainName.length === 0 || trainDestination.length === 0 || firstTrain.length ===  0 || trainFrequency.length === 0) {
+            alert("Please fill all required fields!");
+            if (trainName.length === 0) {
+                alert("Train name input is not valid.");
+                $("#train-name").css("background-color", "pink");
+            } else {
+                $("#train-name").css("background-color", "white");
+            }
 
-        if (trainDestination === '') {
-            alert("Destination input is not valid.");
-            $("#destination").css("background-color", "pink");
-        }
+            if (trainDestination.length === 0) {
+                alert("Destination input is not valid.");
+                $("#destination").css("background-color", "pink");
+            } else {
+                $("#destination").css("background-color", "white");
+            }
 
+            if (firstTrain.length === 0) {
+                alert("First train input is not valid.");
+                $("#first-train-input").css("background-color", "pink");
+            } else {
+                $("#first-train-input").css("background-color", "white");
+            }
+
+            if (trainFrequency.length === 0) {
+                alert("Train frequency input is not valid.");
+                $("#frequency-input").css("background-color", "pink");
+            } else {
+                $("#frequency-input").css("background-color", "white");
+            }
+        }
 
         //check firstTrain input for valid HH:MM input
-        // function validateFirstTrain () {
-        //     var isValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])?$/.test(firstTrain);
-        //     console.log(isValid)
-        //     if (isValid) {
-        //         $("#first-train-input").css("background-color", "white");
-        //     }
-        //     else {
-        //         $("#first-train-input").css("background-color", "pink");
-        //         alert("First Train input is not valid. Please enter a time in 24-hour format(HH:MM)!");
-        //     };
-        // };
-        // validateFirstTrain();
+        function validateFirstTrain () {
+            var isValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])?$/.test(firstTrain);
+            console.log(isValid)
+            if (isValid) {
+                $("#first-train-input").css("background-color", "white");
+            }
+            else {
+                $("#first-train-input").css("background-color", "pink");
+                alert("First Train input is not valid. Please enter a time in 24-hour format(HH:MM)!");
+            };
+        };
+        validateFirstTrain();
+
+        //clear text boxes after submit
+        $("#train-name").val("");
+        $("#destination").val("");
+        $("#first-train-input").val("");
+        $("#frequency-input").val("");
+    });
 
 
         database.ref().on("child_added", function(childSnapshot) {
@@ -107,33 +133,19 @@ $(document).ready(function() {
 
             //append and display new row to table
             var trainTable = $(".schedule-table");
+            var tableID = 0;
+            var deleteBtn = $("<button/>");
+            deleteBtn.attr("data-delete", tableID);
+            deleteBtn.addClass("deleteRow");
+
             trainTable.append(
             `<tr><td>` + trainName + `</td>
-            <td>` + trainDestination+ `</td>
+            <td>` + trainDestination + `</td>
             <td>` + trainFrequency + `</td>
             <td>` + nextTrain + `</td>
             <td>` + minutesAway + `</td></tr>`);
-        })
 
-        //check trainFrequency input for valid MM input
-        // function validateFrequency() {
-        //     var isValid = /^([0-5][0-9])?$/.test(trainFrequency);
-        //     console.log(isValid)
-        //     if (isValid) {
-        //         $("#frequency-input").css("background-color", "white");
-        //     }
-        //     else {
-        //         $("#frequency-input").css("background-color", "pink");
-        //         alert("Train frequency input is not valid. Please enter the a time in minutes(MM)!");
-        //     };
-        // };
-        // validateFrequency();
-        
-        //clear text boxes after submit
-        $("#train-name").val("");
-        $("#destination").val("");
-        $("#first-train-input").val("");
-        $("#frequency-input").val("");
+            tableID++;
+            
+        });
     });
-
-});
